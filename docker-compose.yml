@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  proxy-server:
+    container_name: proxyfilter
+    image: proxy_filter
+    build:
+      context: .
+    restart: always
+    volumes:
+      - ${PWD}/conf:/opt/conf
+    ports:
+      - "8080:8080"
